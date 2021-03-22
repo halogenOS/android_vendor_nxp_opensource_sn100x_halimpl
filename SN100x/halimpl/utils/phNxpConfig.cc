@@ -159,15 +159,21 @@ typedef enum
   TARGET_LAGOON                        = 434, /**< LAGOON target */
   TARGET_SM_LAGOON_H                   = 459, /**< SM_LAGOON_H target */
   TARGET_SCUBA                         = 441, /**< SCUBA  target */
+  TARGET_SCUBA_QCM                     = 473, /**< SCUBA QCM target */
+  TARGET_SCUBA_QCS                     = 474, /**< SCUBA QCS target */
   TARGET_BENGAL                        = 417, /**< BENGAL target */
   TARGET_SM_BENGAL_H                   = 444, /**< SM_BENGAL_H target */
   TARGET_SMP_BENGAL_H                  = 445, /**< SMP_BENGAL_H target */
+  TARGET_BENGAL_QCM                    = 469, /**< BENGAL QCM target */
+  TARGET_BENGAL_QCS                    = 470, /**< BENGAL QCS target */
   TARGET_SM8350                        = 415, /**< SM8350 target */
   TARGET_SM_MANNAR                     = 454, /**< SM_MANNAR target */
   TARGET_SM_MANNAR_H                   = 472, /**< SM_MANNAR_H target */
   TARGET_SM_CEDROS                     = 450, /**< SM_CEDROS target */
   TARGET_SM_FRASER                     = 476, /**< SM_FRASER target */
   TARGET_SM_KODIAK                     = 475, /**< SM_KODIAK target */
+  TARGET_SMP_KODIAK                    = 499, /**< SMP_KODIAK target */
+  TARGET_FAROE                         = 515, /**< FAROE target */
   TARGET_DEFAULT                       = TARGET_GENERIC, /**< new targets */
   TARGET_INVALID                       = 0xFF
 } TARGETTYPE;
@@ -451,13 +457,19 @@ int CNfcConfig::getconfiguration_id (char * config_file)
         case TARGET_SM_CEDROS:
         case TARGET_SM_FRASER:
         case TARGET_SM_KODIAK:
+        case TARGET_SMP_KODIAK:
+        case TARGET_FAROE:
             config_id = QRD_TYPE_SN100;
             strlcpy(config_file, config_name_qrd_SN100, MAX_DATA_CONFIG_PATH_LEN);
             break;
         case TARGET_BENGAL:
         case TARGET_SM_BENGAL_H:
         case TARGET_SMP_BENGAL_H:
+        case TARGET_BENGAL_QCM:
+        case TARGET_BENGAL_QCS:
         case TARGET_SCUBA:
+        case TARGET_SCUBA_QCM:
+        case TARGET_SCUBA_QCS:
             config_id = QRD_TYPE_SN100;
             strlcpy(config_file, config_name_qrd_SN100_38_4MHZ, MAX_DATA_CONFIG_PATH_LEN);
             break;
@@ -530,13 +542,19 @@ int CNfcConfig::getconfiguration_id (char * config_file)
         case TARGET_SM_CEDROS:
         case TARGET_SM_FRASER:
         case TARGET_SM_KODIAK:
+        case TARGET_SMP_KODIAK:
+        case TARGET_FAROE:
             config_id = MTP_TYPE_SN100;
             strlcpy(config_file, config_name_mtp_SN100, MAX_DATA_CONFIG_PATH_LEN);
             break;
         case TARGET_BENGAL:
         case TARGET_SM_BENGAL_H:
         case TARGET_SMP_BENGAL_H:
+        case TARGET_BENGAL_QCM:
+        case TARGET_BENGAL_QCS:
         case TARGET_SCUBA:
+        case TARGET_SCUBA_QCM:
+        case TARGET_SCUBA_QCS:
             config_id = MTP_TYPE_SN100;
             strlcpy(config_file, config_name_mtp_SN100_38_4MHZ, MAX_DATA_CONFIG_PATH_LEN);
             break;
